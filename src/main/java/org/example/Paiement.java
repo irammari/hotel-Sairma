@@ -6,18 +6,19 @@ public abstract class Paiement {
 
     private int id;
     private Facture facture;
-    private int total;
-    private double montant;
+    private double total;
     private LocalDate datePaiement;
+    private ModePaiement modePaiement;
 
-    public Paiement(int id, Facture facture, double montant, LocalDate datePaiement) {
+    public Paiement(int id, Facture facture, double total, LocalDate datePaiement,  ModePaiement modePaiement) {
         this.id = id;
         this.facture = facture;
-        this.montant = montant;
+        this.total = total;
         this.datePaiement = datePaiement;
+        this.modePaiement = modePaiement;
     }
 
-    public abstract void traiterPaiement() {
-
-    };
+    public void traiterPaiement() {
+        facture.setEstPaye(true);
+    }
 }
