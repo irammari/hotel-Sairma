@@ -18,7 +18,7 @@ public abstract class Paiement {
         this.modePaiement = modePaiement;
     }
 
-    public void traiterPaiement() {
+    public void effectuerPaiement() {
         facture.setEstPaye(true);
     }
 }
